@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "8d45d9fb-f4e5-4b22-a448-03244eaf5b1a",
+		"name": "Load Of The Ring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "All Movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05f6b3bd-9746-42e2-aea0-893d2375c64c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5xnvvi-fiQyPVaPKgqDR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/v2/movie",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"v2",
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quote by Movie ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bb12d36a-1fd7-433e-8baa-3cf4479abf03",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_URL}}/v2/movie/5cd95395de30eff6ebccde57",
+							"host": [
+								"{{Base_URL}}"
+							],
+							"path": [
+								"v2",
+								"movie",
+								"5cd95395de30eff6ebccde57"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "5xnvvi-fiQyPVaPKgqDR",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dde673d1-7257-40cd-9238-4289535b342c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "093be46e-88c0-49ae-8395-685859f98008",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
